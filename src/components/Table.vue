@@ -24,13 +24,6 @@ const submitForm = async () => {
   }
 };
 
-// export default {
-//   props: {
-//     timesheetData: {
-//         required : true,
-//         },
-//     },
-// }
 </script>
 
 <template>
@@ -64,10 +57,17 @@ const submitForm = async () => {
             <tbody>
                 <tr v-for="entry in timesheetData" :key="entry.id">
                     <td>{{ entry.timeIn }}</td>
-                    <td> <img :src="entry.bookOnImageURL" alt=""></td>
+                    <td> <a :href="entry.bookOnImageURL" target="_blank">
+                            <img :src="entry.bookOnImageURL" alt="">
+                        </a>
+                    </td>
                     <td>{{ entry.timeIn }}</td>
                     <td>{{ entry.bookOnLocationName }}</td>
-                    <td> <img :src="entry.bookOffImageURL" alt=""></td>
+                    <td> 
+                        <a :href="entry.bookOnImageURL" target="_blank">
+                            <img :src="entry.bookOffImageURL" alt="">
+                        </a>
+                    </td>
                     <td>{{ entry.timeOut }}</td>
                     <td>{{ entry.bookOffLocationName }}</td>
                     <td>{{ entry.hoursWorked }}</td>
